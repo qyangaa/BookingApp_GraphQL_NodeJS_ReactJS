@@ -1,0 +1,35 @@
+# in postman
+{
+	"query": "query {login(email:\"ab@aa.com\", password:\"tester\") { token }}"
+}
+
+# simple data
+query GetEvents {
+  events
+}
+
+mutation createEvent {
+  createEvent(name: "New Event")
+}
+
+# data as objects
+query GetEvents {
+  events {
+    title
+    price
+  }
+}
+
+mutation createEvent {
+  createEvent(
+    eventInput: {
+      title: "Event 2"
+      description: "working"
+      price: 1.0
+      date: "2021-03-05T20:33:35.797Z"
+    }
+  ) {
+    title
+    price
+  }
+}
